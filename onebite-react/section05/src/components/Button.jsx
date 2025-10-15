@@ -12,4 +12,4 @@ onClickButton
         style={{color: color}}>{text}-{color.toUpperCase()}</button>);
 };
 
-export default Button;
+export default Button; 
