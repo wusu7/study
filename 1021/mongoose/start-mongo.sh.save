@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# 1. 데이터 디렉토리 경로
+DBPATH="/opt/homebrew/var/mongodb"
+LOGPATH="/opt/homebrew/var/log/mongodb/mongo.log"
+
+# 2. 권한 확인 및 수정
+echo "🔧 데이터 디렉토리 및 로그 디렉토리 권한 수정..."
+sudo mkdir -p $DBPATH
+sudo mkdir -p $(dirname $LOGPATH)
+sudo chown -R $(whoami) $DBPATH
+sudo chmod -R 755 $DBPATH
+sudo chown -R $(whoami) $(dirname $LOGPATH)
+sudo chmod -R 755 $(dirname $LOGPATH)
+
+# 3. 데이터 초기화 (선택, 기존 데이터 삭제)
+echo "🗑 기존 데이터 초기화..."
+rm -rf $DBPATH/*
+
+# 4. 기존 로그 파일 백업
+if [ -f "$LOGPATH" ]; then
+    mv $LOGPATH "${LOGPATH}.$(date +%Y-%m-%dT%H-%M-%S)"
+fi
+
+# 5. MongoDB 서버 실행 (포그라운드)
+echo "🚀 MongoDB 서버 실행..."
+mongod --dbpath $DBPATH --logpath $LOGPATH --bind_ip 127.0.0.1 --port 27017 --fork
+
+# 6. mongosh 연결 확인
+echo "🔗 mongosh 접속 시도..."
+mongosh --quiet --eval "db.adminCommand('ping')"
+
