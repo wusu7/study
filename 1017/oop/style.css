@@ -1,0 +1,83 @@
+/* Basic Styles for the Exercise Website */
+
+body {
+    /* Add padding to the top to account for the fixed navbar */
+    padding-top: 56px;
+}
+
+section {
+    /* Add some space between sections */
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.display-5 {
+    font-weight: 300;
+}
+
+.ratio iframe {
+    border-radius: 0.25rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Styles for Memo Feature */
+.form-group {
+    margin-top: 1rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.save-memo {
+    margin-top: 0.5rem;
+}
+
+/* Chatbot Styles */
+.chat-message {
+    margin-bottom: 1rem;
+    display: flex;
+}
+
+.chat-message.user {
+    justify-content: flex-end;
+}
+
+.chat-message .message-bubble {
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 80%;
+}
+
+.chat-message.user .message-bubble {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.chat-message.bot .message-bubble {
+    background-color: #e9ecef;
+    color: #212529;
+}
+
+.chat-message.error .message-bubble {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+#chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+#chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

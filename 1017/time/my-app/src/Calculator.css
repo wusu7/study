@@ -1,0 +1,74 @@
+/* 10. 계산기 전체 스타일 */
+.calculator {
+  width: 320px;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+
+/* 11. 화면 표시부 스타일 */
+.display {
+  background-color: #222;
+  color: #fff;
+  font-size: 48px;
+  text-align: right;
+  padding: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* 12. 키패드 영역 스타일 */
+.keypad {
+  display: flex;
+}
+
+.input-keys {
+  width: 240px;
+}
+
+/* 13. 기능키(AC, +/-, %) 스타일 */
+.function-keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 14. 숫자키 스타일 */
+.digit-keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.digit-keys .zero {
+  grid-column: 1 / span 2;
+}
+
+/* 15. 연산자키 스타일 */
+.operator-keys {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.operator-keys button {
+  background-color: #f9a825;
+  color: #fff;
+}
+
+/* 16. 모든 버튼에 대한 공통 스타일 */
+button {
+  height: 64px;
+  border: 1px solid #ccc;
+  background-color: #f2f2f2;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+button:active {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}

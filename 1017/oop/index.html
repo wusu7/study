@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부위별 운동 가이드</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">운동 가이드</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Chest Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownChest" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            가슴
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownChest">
+                            <li><a class="dropdown-item" href="#bench-press">벤치 프레스</a></li>
+                            <li><a class="dropdown-item" href="#push-up">푸쉬업</a></li>
+                        </ul>
+                    </li>
+                    <!-- Back Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBack" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            등
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownBack">
+                            <li><a class="dropdown-item" href="#pull-up">풀업</a></li>
+                            <li><a class="dropdown-item" href="#barbell-row">바벨 로우</a></li>
+                        </ul>
+                    </li>
+                    <!-- Legs Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLegs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            하체
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownLegs">
+                            <li><a class="dropdown-item" href="#squat">스쿼트</a></li>
+                            <li><a class="dropdown-item" href="#lunge">런지</a></li>
+                        </ul>
+                    </li>
+                    <!-- Shoulders Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownShoulders" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            어깨
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownShoulders">
+                            <li><a class="dropdown-item" href="#overhead-press">오버헤드 프레스</a></li>
+                            <li><a class="dropdown-item" href="#side-lateral-raise">사이드 레터럴 레이즈</a></li>
+                        </ul>
+                    </li>
+                    <!-- Arms Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownArms" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            팔
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownArms">
+                            <li><a class="dropdown-item" href="#barbell-curl">바벨 컬</a></li>
+                            <li><a class="dropdown-item" href="#dumbbell-kick-back">덤벨 킥 백</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Header -->
+    <header class="py-5 bg-light text-center">
+        <div class="container">
+            <h1 class="display-4">어서오세요!</h1>
+            <p class="lead">건강한 몸을 위한 부위별 운동 가이드입니다. 상단 메뉴에서 원하는 부위를 선택하세요.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <!-- Bench Press -->
+        <div id="bench-press" class="exercise-content d-none">
+            <h2 class="display-5 border-bottom pb-2 mb-4">벤치 프레스 (가슴)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="images/bp.webp" class="img-fluid mb-2" alt="Bench Press">
+                    <p>가슴 근육, 어깨, 삼두근을 발달시키는 대표적인 운동입니다. 벤치에 누워 바벨을 가슴까지 내렸다가 밀어 올리는 동작을 반복합니다. 정확한 자세가 매우 중요합니다.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h6>세부 운동:</h6>
+                    <ul>
+                        <li>플랫 벤치 프레스</li>
+                        <li>인클라인 벤치 프레스</li>
+                        <li>디클라인 벤치 프레스</li>
+                    </ul>
+                    <div class="form-group">
+                        <label for="memo-bench-press">운동 메모:</label>
+                        <textarea class="form-control" id="memo-bench-press" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-sm mt-2 save-memo" data-memo-id="memo-bench-press">메모 저장</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Push-up -->
+        <div id="push-up" class="exercise-content d-none">
+            <h2 class="display-5 border-bottom pb-2 mb-4">푸쉬업 (가슴)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="images/pu.jpg" class="img-fluid mb-2" alt="Push-up">
+                    <p>맨몸으로 할 수 있는 가장 기본적인 가슴 운동입니다. 어깨너비보다 넓게 팔을 벌리고 엎드린 자세에서 가슴이 바닥에 닿기 직전까지 몸을 내렸다가 올라옵니다.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h6>세부 운동:</h6>
+                    <ul>
+                        <li>기본 푸쉬업</li>
+                        <li>인클라인 푸쉬업</li>
+                        <li>디클라인 푸쉬업</li>
+                    </ul>
+                    <div class="form-group">
+                        <label for="memo-push-up">운동 메모:</label>
+                        <textarea class="form-control" id="memo-push-up" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-sm mt-2 save-memo" data-memo-id="memo-push-up">메모 저장</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pull-up -->
+        <div id="pull-up" class="exercise-content d-none">
+            <h2 class="display-5 border-bottom pb-2 mb-4">풀업 (등)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="images/pu.png" class="img-fluid mb-2" alt="Pull-up">
+                    <p>광배근을 포함한 등 전체를 발달시키는 최고의 맨몸 운동입니다. 철봉에 매달려 턱을 철봉 위까지 끌어 올리는 동작입니다. 처음에는 밴드나 보조 기구를 사용할 수 있습니다.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h6>세부 운동:</h6>
+                    <ul>
+                        <li>친업</li>
+                        <li>와이드 그립 풀업</li>
+                        <li>뉴트럴 그립 풀업</li>
+                    </ul>
+                    <div class="form-group">
+                        <label for="memo-pull-up">운동 메모:</label>
+                        <textarea class="form-control" id="memo-pull-up" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-sm mt-2 save-memo" data-memo-id="memo-pull-up">메모 저장</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barbell Row -->
+        <div id="barbell-row" class="exercise-content d-none">
+            <h2 class="display-5 border-bottom pb-2 mb-4">바벨 로우 (등)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="images/br.png" class="img-fluid mb-2" alt="Barbell Row">
+                    <p>등 두께를 키우는 데 효과적인 운동입니다. 상체를 숙인 상태에서 바벨을 복부 쪽으로 끌어당기는 동작을 통해 등 중앙과 상부 근육을 자극합니다.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h6>세부 운동:</h6>
+                    <ul>
+                        <li>오버핸드 그립 로우</li>
+                        <li>언더핸드 그립 로우</li>
+                        <li>펜들레이 로우</li>
+                    </ul>
+                    <div class="form-group">
+                        <label for="memo-barbell-row">운동 메모:</label>
+                        <textarea class="form-control" id="memo-barbell-row" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-sm mt-2 save-memo" data-memo-id="memo-barbell-row">메모 저장</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Squat -->
+        <div id="squat" class="exercise-content d-none">
+            <h2 class="display-5 border-bottom pb-2 mb-4">스쿼트 (하체)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="images/sq.jpeg" class="img-fluid mb-2" alt="Squat">
+                    <p>하체 운동의 왕으로 불리며 대퇴사두근, 햄스트링, 둔근 등 하체 전체를 강화합니다. 마치 의자에 앉는 것처럼 엉덩이를 내렸다가 일어나는 동작입니다.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h6>세부 운동:</h6>
+                    <ul>
+                        <li>백 스쿼트</li>
+                        <li>프론트 스쿼트</li>
+                        <li>고블릿 스쿼트</li>
+                    </ul>
+                    <div class="form-group">
+                        <label for="memo-squat">운동 메모:</label>
+                        <textarea class="form-control" id="memo-squat" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-sm mt-2 save-memo" data-memo-id="memo-squat">메모 저장</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lunge -->
+        <div id="lunge" class="exercise-content d-none">
+            <h2 class="display-5 border-bottom pb-2 mb-4">런지 (하체)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="images/r.jpeg" class="img-fluid mb-2" alt="Lunge">
+                    <p>다리를 앞뒤로 벌리고 서서, 앞쪽 무릎을 90도로 구부렸다가 일어나는 동작입니다. 하체 근력뿐만 아니라 균형 감각을 기르는 데도 도움이 됩니다.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h6>세부 운동:</h6>
+                    <ul>
+                        <li>기본 런지</li>
+                        <li>워킹 런지</li>
+                        <li>사이드 런지</li>
+                    </ul>
+                    <div class="form-group">
+                        <label for="memo-lunge">운동 메모:</label>
+                        <textarea class="form-control" id="memo-lunge" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-sm mt-2 save-memo" data-memo-id="memo-lunge">메모 저장</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overhead Press -->
+        <div id="overhead-press" class="exercise-content d-none">
+            <h2 class="display-5 border-bottom pb-2 mb-4">오버헤드 프레스 (어깨)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="images/img.png" class="img-fluid mb-2" alt="Overhead Press">
+                    <p>어깨 전체, 특히 전면 및 측면 삼각근을 발달시키는 운동입니다. 바벨이나 덤벨을 머리 위로 들어 올리는 동작으로, 어깨를 넓고 강하게 만들어 줍니다.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h6>세부 운동:</h6>
+                    <ul>
+                        <li>바벨 오버헤드 프레스</li>
+                        <li>덤벨 오버헤드 프레스</li>
+                        <li>아놀드 프레스</li>
+                    </ul>
+                    <div class="form-group">
+                        <label for="memo-overhead-press">운동 메모:</label>
+                        <textarea class="form-control" id="memo-overhead-press" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-sm mt-2 save-memo" data-memo-id="memo-overhead-press">메모 저장</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Side Lateral Raise -->
+        <div id="side-lateral-raise" class="exercise-content d-none">
+            <h2 class="display-5 border-bottom pb-2 mb-4">사이드 레터럴 레이즈 (어깨)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="images/srr.jpg" class="img-fluid mb-2" alt="Side Lateral Raise">
+                    <p>어깨 측면(측면 삼각근)을 집중적으로 자극하여 어깨를 넓어 보이게 하는 데 효과적입니다. 덤벨을 양손에 들고 팔을 옆으로 들어 올리는 동작입니다.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h6>세부 운동:</h6>
+                    <ul>
+                        <li>덤벨 사이드 레터럴 레이즈</li>
+                        <li>케이블 사이드 레터럴 레이즈</li>
+                        <li>벤트 오버 레터럴 레이즈</li>
+                    </ul>
+                    <div class="form-group">
+                        <label for="memo-side-lateral-raise">운동 메모:</label>
+                        <textarea class="form-control" id="memo-side-lateral-raise" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-sm mt-2 save-memo" data-memo-id="memo-side-lateral-raise">메모 저장</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barbell Curl -->
+        <div id="barbell-curl" class="exercise-content d-none">
+            <h2 class="display-5 border-bottom pb-2 mb-4">바벨 컬 (팔)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="images/img.jpg" class="img-fluid mb-2" alt="Barbell Curl">
+                    <p>팔 앞쪽 근육인 이두근을 키우는 가장 대표적인 운동입니다. 바벨을 언더핸드 그립으로 잡고 팔을 구부려 들어 올리는 동작을 반복합니다.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h6>세부 운동:</h6>
+                    <ul>
+                        <li>스탠딩 바벨 컬</li>
+                        <li>프리쳐 컬</li>
+                        <li>리버스 그립 컬</li>
+                    </ul>
+                    <div class="form-group">
+                        <label for="memo-barbell-curl">운동 메모:</label>
+                        <textarea class="form-control" id="memo-barbell-curl" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-sm mt-2 save-memo" data-memo-id="memo-barbell-curl">메모 저장</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dumbbell Kick Back -->
+        <div id="dumbbell-kick-back" class="exercise-content d-none">
+            <h2 class="display-5 border-bottom pb-2 mb-4">덤벨 킥 백 (팔)</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <img src="images/dk.jpg" class="img-fluid mb-2" alt="Dumbbell Kick Back">
+                    <p>팔 뒤쪽 근육인 삼두근을 단련하는 운동입니다. 벤치에 한쪽 무릎과 손을 대고 상체를 숙인 후, 덤벨을 든 팔을 뒤로 뻗어주는 동작입니다.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h6>세부 운동:</h6>
+                    <ul>
+                        <li>원-암 덤벨 킥백</li>
+                        <li>케이블 프레스 다운</li>
+                        <li>라잉 트라이셉스 익스텐션</li>
+                    </ul>
+                    <div class="form-group">
+                        <label for="memo-dumbbell-kick-back">운동 메모:</label>
+                        <textarea class="form-control" id="memo-dumbbell-kick-back" rows="3"></textarea>
+                    </div>
+                    <button class="btn btn-primary btn-sm mt-2 save-memo" data-memo-id="memo-dumbbell-kick-back">메모 저장</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Copyright &copy; Your Website 2025</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Chatbot UI -->
+    <div id="chat-button" class="bg-primary text-white rounded-circle d-flex justify-content-center align-items-center" style="position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; cursor: pointer; z-index: 1050;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+            <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+        </svg>
+    </div>
+
+    <div id="chat-window" class="d-none" style="position: fixed; bottom: 90px; right: 20px; width: 350px; height: 500px; z-index: 1040; background-color: white; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); display: flex; flex-direction: column;">
+        <!-- Chat Header -->
+        <div class="p-3 bg-primary text-white" style="border-top-left-radius: 10px; border-top-right-radius: 10px;">
+            <h5 class="mb-0">운동 상담 챗봇</h5>
+        </div>
+
+        <!-- Messages -->
+        <div id="chat-messages" class="p-3" style="flex-grow: 1; overflow-y: auto;">
+            <div class="mb-2 text-center text-muted">무엇이든 물어보세요!</div>
+        </div>
+
+        <!-- Input -->
+        <div class="p-3 border-top">
+            <form id="chat-form" class="d-flex">
+                <input type="text" id="chat-input" class="form-control" placeholder="메시지 입력...">
+                <button type="submit" class="btn btn-primary ms-2">전송</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

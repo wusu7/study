@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Do</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="board">
+        <div class="board-header">
+            <h1>Do</h1>
+            <div class="header-controls">
+                <div class="page-size-selector">
+                    <button class="page-size-btn" data-size="5">5개씩</button>
+                    <button class="page-size-btn" data-size="10">10개씩</button>
+                    <button class="page-size-btn" data-size="15">15개씩</button>
+                </div>
+                <button id="write-btn">글쓰기</button>
+            </div>
+        </div>
+        <ul id="board-list"></ul>
+        <div id="pagination">
+            <button id="prev-btn">이전</button>
+            <div id="page-numbers"></div>
+            <button id="next-btn">다음</button>
+        </div>
+    </div>
+
+    <!-- 글쓰기 모달 -->
+    <div id="write-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>새 글 작성</h2>
+            <form id="write-form">
+                <div class="form-group">
+                    <label for="title-input">제목</label>
+                    <input type="text" id="title-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="author-input">작성자</label>
+                    <input type="text" id="author-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="content-input">내용</label>
+                    <textarea id="content-input" rows="10" required></textarea>
+                </div>
+                <div class="form-actions">
+                    <input type="password" id="password-input" placeholder="암호" maxlength="4" pattern="\d{4}" title="4자리 숫자를 입력하세요." required>
+                    <button type="submit">저장</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 게시글 보기 모달 -->
+    <div id="view-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="view-title"></h2>
+            <div id="view-meta">
+                <span id="view-author"></span> | 
+                <span id="view-date"></span> | 
+                조회수: <span id="view-views"></span>
+            </div>
+            <p id="view-content"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
