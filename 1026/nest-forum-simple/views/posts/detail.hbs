@@ -1,0 +1,38 @@
+<h1>{{post.title}}</h1>
+<p style="white-space:pre-wrap;">{{post.content}}</p>
+<p><small>작성: {{post.createdAt}} / 수정: {{post.updatedAt}}</small></p>
+<hr/>
+
+<h2>수정</h2>
+<form method="POST" action="/posts/{{id}}">
+  <div><input type="text" name="title" value="{{post.title}}" required maxlength="100" style="width:100%"></div>
+  <div><textarea name="content" required style="width:100%;height:120px;">{{post.content}}</textarea></div>
+  <button type="submit">수정 저장</button>
+</form>
+<form method="POST" action="/posts/{{id}}/delete" style="margin-top:8px;">
+  <button type="submit" onclick="return confirm('삭제하시겠습니까?')">삭제</button>
+</form>
+
+<hr/>
+<h2>댓글</h2>
+<ul>
+  {{#each post.comments}}
+    <li>
+      <b>{{this.authorName}}</b> ({{this.createdAt}}) : {{this.content}}
+      <form method="POST" action="/posts/{{../id}}/comments/{{@index}}/delete" style="display:inline;">
+        <button type="submit">삭제</button>
+      </form>
+    </li>
+  {{/each}}
+  {{#unless post.comments.length}}
+    <li>댓글이 없습니다.</li>
+  {{/unless}}
+</ul>
+
+<form method="POST" action="/posts/{{id}}/comments" style="margin-top:8px;">
+  <input type="text" name="authorName" placeholder="닉네임(옵션)">
+  <input type="text" name="content" placeholder="댓글 내용" required style="width:60%">
+  <button type="submit">등록</button>
+</form>
+
+<p style="margin-top:16px;"><a href="/posts">← 목록으로</a></p>

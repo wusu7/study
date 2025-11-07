@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/mini-project/wusu/static/css/main.1e47a7db.css",
+    "main.js": "/mini-project/wusu/static/js/main.297017d2.js",
+    "static/js/453.117b0875.chunk.js": "/mini-project/wusu/static/js/453.117b0875.chunk.js",
+    "static/media/material-icons-latin-400-normal.woff": "/mini-project/wusu/static/media/material-icons-latin-400-normal.ec276a3b4c1b27cdbab7.woff",
+    "static/media/material-icons-latin-400-normal.woff2": "/mini-project/wusu/static/media/material-icons-latin-400-normal.0c35d18bf06992036b69.woff2",
+    "index.html": "/mini-project/wusu/index.html",
+    "main.1e47a7db.css.map": "/mini-project/wusu/static/css/main.1e47a7db.css.map",
+    "main.297017d2.js.map": "/mini-project/wusu/static/js/main.297017d2.js.map",
+    "453.117b0875.chunk.js.map": "/mini-project/wusu/static/js/453.117b0875.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1e47a7db.css",
+    "static/js/main.297017d2.js"
+  ]
+}

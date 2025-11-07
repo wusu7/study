@@ -1,0 +1,42 @@
+<h1>게시판</h1>
+
+<form method="GET" action="/posts" style="margin-bottom:16px;">
+  <input type="text" name="search" value="{{search}}" placeholder="검색(제목)">
+  <button type="submit">검색</button>
+</form>
+
+<table border="1" cellpadding="8" cellspacing="0" width="100%">
+  <thead>
+    <tr><th>제목</th><th>작성일</th></tr>
+  </thead>
+  <tbody>
+    {{#each data}}
+      <tr>
+        <td><a href="/posts/{{this._id}}">{{this.title}}</a></td>
+        <td>{{this.createdAt}}</td>
+      </tr>
+    {{/each}}
+    {{#unless data.length}}
+      <tr><td colspan="2" style="text-align:center;">게시글이 없습니다.</td></tr>
+    {{/unless}}
+  </tbody>
+</table>
+
+<div style="margin:12px 0;">
+  {{#if (gt page 1)}}
+    <a href="/posts?page={{dec page}}&limit={{limit}}&search={{search}}">이전</a>
+  {{/if}}
+  <span> {{page}} / {{totalPages}} </span>
+  {{#if (lt page totalPages)}}
+    <a href="/posts?page={{inc page}}&limit={{limit}}&search={{search}}">다음</a>
+  {{/if}}
+</div>
+
+<hr/>
+
+<h2>새 글 작성</h2>
+<form method="POST" action="/posts">
+  <div><input type="text" name="title" placeholder="제목" required maxlength="100" style="width:100%"></div>
+  <div><textarea name="content" placeholder="내용" required style="width:100%;height:120px;"></textarea></div>
+  <button type="submit">등록</button>
+</form>
